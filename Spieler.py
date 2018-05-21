@@ -4,18 +4,20 @@ class Spieler:
 
 	'''Konstruktor'''
 	def __init__(self, name):
-		self.name = name
-		self.punkte = 10
-		self.result = 0
-		self.call = 0
+		self.name: str = name
+		self.punkte: int = 2
+		self.result: int = 0
+		self.call: int = 0
 
 	def schuetteln(self):
-		random_zahl1 = randint(1, 6)
-		random_zahl2 = randint(1, 6)
-		if random_zahl1 > random_zahl2:
-			self.result = (random_zahl1 * 10) + random_zahl2
+		random_zahl_1 = randint(1, 6)
+		random_zahl_2 = randint(1, 6)
+		if random_zahl_1 > random_zahl_2:
+			self.result = (random_zahl_1 * 10) + random_zahl_2
+		elif random_zahl_1 == random_zahl_2:
+			self.result = (random_zahl_2 * 10) + random_zahl_1
 		else:
-			self.result = (random_zahl2 * 10) + random_zahl1
+			self.result = (random_zahl_2 * 10) + random_zahl_1
 
 	def reset_values(self):
 		self.result = 0
